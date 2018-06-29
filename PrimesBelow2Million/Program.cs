@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PrimesBelow2Million
 {
@@ -11,8 +9,8 @@ namespace PrimesBelow2Million
     {
         static void Main(string[] args)
         {
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
             int rangeStart = 1;
             int rangeEnd = 2000000;
@@ -29,7 +27,7 @@ namespace PrimesBelow2Million
                 }
             }
 
-            Console.WriteLine($"Worked out primes. Number of prime numbers below {rangeEnd}: {primeNumbers.Count()}\n");
+            Console.WriteLine($"Worked out primes. Number of prime numbers below {rangeEnd}: {primeNumbers.Count()} \n");
 
             //Use Int64 instead of int as int.MAX_VALUE is too low. 
             Int64 sumOfPrimes = 0;
@@ -39,11 +37,11 @@ namespace PrimesBelow2Million
                 sumOfPrimes += primeNumber;
             }
 
-            stopWatch.Stop();
+            sw.Stop();
 
-            string timeTaken = stopWatch.Elapsed.ToString("ss\\.ff");
+            string timeTaken = sw.Elapsed.ToString("ss\\.ff");
 
-            Console.WriteLine($"Sum of all primes below 2 million: {sumOfPrimes}\n");
+            Console.WriteLine($"Sum of all primes below 2 million: {sumOfPrimes} \n");
             Console.WriteLine($"Time taken: {timeTaken} seconds");
             Console.ReadLine();
         }
